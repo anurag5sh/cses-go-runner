@@ -73,7 +73,7 @@ func (c *GoCompiler) Compile() (string, error) {
 }
 
 func (c *GoCompiler) getOutputPath() string {
-	dir := filepath.Dir(c.config.FilePath)
+	dir, _ := filepath.Abs(filepath.Dir(c.config.FilePath))
 	base := strings.TrimSuffix(filepath.Base(c.config.FilePath), ".go")
 	return filepath.Join(dir, base+"_cses_executable")
 }
