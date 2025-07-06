@@ -105,7 +105,7 @@ cses-go-runner -file=solution.go -problem=1068 -force-auth
 |------|-------------|---------|
 | `-file` | Path to Go solution file | - |
 | `-problem` | CSES problem ID | - |
-| `-timeout` | Timeout per test case | `2s` |
+| `-timeout` | Timeout per test case | `1s` |
 | `-verbose` | Enable verbose output | `false` |
 | `-cache-dir` | Cache directory | `./cses-cache` |
 | `-parallel` | Number of parallel executions | `4` |

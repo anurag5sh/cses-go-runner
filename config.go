@@ -21,7 +21,7 @@ type Config struct {
 func (c *Config) GetTimeout() time.Duration {
 	duration, err := time.ParseDuration(c.Timeout)
 	if err != nil {
-		return 2 * time.Second // default
+		return 1 * time.Second // default
 	}
 	return duration
 }

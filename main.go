@@ -52,7 +52,7 @@ func main() {
 	var (
 		filePath  = flag.String("file", "", "Path to the Go solution file")
 		problemID = flag.String("problem", "", "CSES problem ID")
-		timeout   = flag.String("timeout", "2s", "Timeout for each test case (default: 2s)")
+		timeout   = flag.String("timeout", "1s", "Timeout for each test case (default: 2s)")
 		verbose   = flag.Bool("verbose", false, "Enable verbose output")
 		cacheDir  = flag.String("cache-dir", "~/.cache/cses-go-runner", "Directory to cache test cases")
 		parallel  = flag.Int("parallel", 4, "Number of parallel test executions")
