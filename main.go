@@ -108,9 +108,6 @@ func main() {
 		return
 	}
 
-	//Ensure cache exists
-	enusureCacheDir(*cacheDir)
-
 	config := &Config{
 		FilePath:  *filePath,
 		ProblemID: *problemID,
@@ -124,6 +121,9 @@ func main() {
 		Race:      *race,
 		ForceAuth: *forceAuth,
 	}
+
+	//Ensure cache exists
+	enusureCacheDir(config)
 
 	switch command {
 	case "auth":
@@ -200,7 +200,7 @@ func handleAuth(config *Config) error {
 	return nil
 }
 
-func enusureCacheDir(cacheDir string) {
+func enusureCacheDir(config *Config) {
 	// Get the current user
 	currentUser, err := user.Current()
 	if err != nil {
@@ -211,7 +211,8 @@ func enusureCacheDir(cacheDir string) {
 	// Get the home directory
 	homeDir := currentUser.HomeDir
 
-	absolutePath := strings.Replace(cacheDir, "~", homeDir, 1)
+	absolutePath := strings.Replace(config.CacheDir, "~", homeDir, 1)
+	config.CacheDir = absolutePath
 
 	// Clean and resolve the path
 	finalPath := filepath.Clean(absolutePath)
