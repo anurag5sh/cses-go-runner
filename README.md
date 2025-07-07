@@ -1,6 +1,6 @@
 # CSES Go Runner v1.0
 
-A specialized CLI tool for running and testing CSES (Code Submission Evaluation System) problems with Go solutions. Now with direct CSES authentication and test case downloading!
+A specialized CLI tool for running and testing CSES (Code Submission Evaluation System) problems with GoLang solutions. Now with direct CSES authentication and test case downloading!
 
 ## New Features in v1.0
 
